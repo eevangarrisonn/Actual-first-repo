@@ -207,5 +207,3 @@ test_person_scope.lifting_partner(test_person_two)
 test_person_two.lifting_partner(test_person_scope)
 print(test_person_scope)
 print(test_person_two)
-
-# This is to test the git functionality
