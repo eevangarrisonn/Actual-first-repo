@@ -88,3 +88,5 @@ print(deck_cards)
 # Figure out how to deal with the Ace card, it can be 1 or 11
 # Test out inputs inside of methods in test file, and calling methods depending on input as well
 # Have a choice method that takes input and calls the appropriate method (hit, stand, double down, split, etc.)
+
+# Testing git commit from github to local
