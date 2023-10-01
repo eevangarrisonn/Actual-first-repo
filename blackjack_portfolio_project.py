@@ -13,6 +13,7 @@ import random
 
 class Player:
     # Add cash in and cash out functionality, and exchanging between cash and chips
+    # If i add checking functions to dealer class then I will need to have a dealer object in the player class intialization
     def __init__(self, name, money):
         self.name = name
         self.money = money
@@ -38,20 +39,41 @@ class Player:
     def split(self):
         pass
 
+    # Add change ace value method here or dealer class?
+
 class Dealer:
-    def __init__(self):
+    def __init__(self, player: Player):
         self.hand = []
         self.deck = []
+        self.player = player
 
-    def deal(self, player: Player):
+    def deal(self):
         pass
 
     def hit(self):
         pass
 
-    # Checking functions here? Maybe create them and then  call them each time in the methods above (if check(x) == True then x)
+    # Checking functions here? Maybe create them and then call them each time in the methods above (if check(x) == True then (y))... create class with these functions that i can call above
+    def check_for_blackjack(self):
+        pass
 
-# Make the deck_cards list a dictionary and assign values to each card, or just have the Ace be a string and the rest numbers
+    def check_for_bust(self):
+        pass
+    
+    def check_for_win(self):
+        pass
+    
+    def check_for_push(self):
+        pass
+
+    def check_for_ace(self):
+        pass
+
+    def check_for_loss(self):
+        pass
+
+# Make the deck_cards list a dictionary and a
+# Assign values to each card, or just have the Ace be a string and the rest numbers
 # Have aces be worth 1 than just add 10 based on input?
 # Could also use a dictionary, and have the keys differentiated by suit, and the values be the card values
 deck_cards = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4 ,4 ,4, 5, 5, 5, 5, 6, 6, 6, 6, 7 ,7 ,7 ,7, 8, 8, 8, 8, 9, 9, 9, 9, 10 ,10 ,10 ,10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 'Ace', 'Ace', 'Ace', 'Ace']
