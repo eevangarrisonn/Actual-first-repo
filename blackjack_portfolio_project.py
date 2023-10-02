@@ -42,9 +42,10 @@ class Player:
     # Add change ace value method here or dealer class?
 
 class Dealer:
-    def __init__(self, player: Player):
+    def __init__(self, name, player: Player):
         self.hand = []
         self.deck = []
+        self.name = name
         self.player = player
 
     def deal(self):
@@ -54,6 +55,14 @@ class Dealer:
         pass
 
     # Checking functions here? Maybe create them and then call them each time in the methods above (if check(x) == True then (y))... create class with these functions that i can call above
+    
+# Possibly take away game class and just have the methods in the player and dealer classes, would have to dupicate some methods in both... could also just have the methods in the player class and then have the dealer class inherit from the player class... could also do a parent/child class or the other type of inheritance (starts with a c)... could alao take away the game class and just have the checking functions by themselves (not in a class) and call them in the methods of the player and dealer classes
+
+class Game:
+    def __init__(self, player: Player, dealer: Dealer):
+        self.player = player
+        self.dealer = dealer
+    
     def check_for_blackjack(self):
         pass
 
@@ -75,7 +84,7 @@ class Dealer:
 # Make the deck_cards list a dictionary and a
 # Assign values to each card, or just have the Ace be a string and the rest numbers
 # Have aces be worth 1 than just add 10 based on input?
-# Could also use a dictionary, and have the keys differentiated by suit, and the values be the card values
+# Could also use a dictionary, and have the keys differentiated by suit, and the values be the card values... if I were to do this, then I could add side bet functionality
 deck_cards = [2, 2, 2, 2, 3, 3, 3, 3, 4, 4 ,4 ,4, 5, 5, 5, 5, 6, 6, 6, 6, 7 ,7 ,7 ,7, 8, 8, 8, 8, 9, 9, 9, 9, 10 ,10 ,10 ,10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 'Ace', 'Ace', 'Ace', 'Ace']
 print(len(deck_cards))
 # Have to use a loop to shuffle the deck, then pop the cards out of the list after they are dealt, then shuffle again when the deck is close to empty
