@@ -194,3 +194,50 @@ def input_func():
         return input_func()
     
 print(input_func())
+
+# Testing this for the blackjack project
+# Options for inheritance dillema: 
+# 1. Possibly take away game class and just have the methods in the player and dealer classes, would have to dupicate some methods in both classes
+# 2. Could just have the methods in the player class and then have the dealer class inherit from the player class, or vice versa 
+# 3. Could do a parent/child class or the other type of inheritance (starts with a c)
+# 4. Could take away the game class and just have the checking functions by themselves (not in a class) and call them in the methods of the player and dealer classes
+
+# Testing 4 below: (WORKS)
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+        self.chips = 100
+    
+    def __repr__(self):
+        return '{name} has {hand}.'.format(name = self.name, hand = self.hand)
+    
+    def get_cards(self, card1, card2, card3):
+        self.hand.append(card1)
+        self.hand.append(card2)
+        self.hand.append(card3)
+        return self.hand
+    
+    def get_chips(self, bet_amount):
+        if check_for_bust() == 'Bust':
+            self.chips -= bet_amount
+            return 'You have busted and lost your bet'
+        else:
+            self.chips += bet_amount
+            return 'You have won and gained your bet'
+
+def check_for_bust(player: Player):
+    if sum(player.hand) > 21:
+        return 'Bust'
+    else:
+        return 'Not bust'
+    
+player_1 = Player('John')
+player_1.get_cards(3, 10, 10)
+print(check_for_bust(player_1))
+player_1.hand.pop()
+player_1.hand.append(2)
+print(check_for_bust(player_1))
+
+# 1 and 2 would work most likely
+# Need to figuren out how to automatically call all the checking functions every time a turn is made (could make a function that calls all the checking functions and then call that function in every method that makes a turn)
