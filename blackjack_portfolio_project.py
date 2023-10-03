@@ -56,7 +56,11 @@ class Dealer:
 
     # Checking functions here? Maybe create them and then call them each time in the methods above (if check(x) == True then (y))... create class with these functions that i can call above
     
-# Possibly take away game class and just have the methods in the player and dealer classes, would have to dupicate some methods in both... could also just have the methods in the player class and then have the dealer class inherit from the player class... could also do a parent/child class or the other type of inheritance (starts with a c)... could alao take away the game class and just have the checking functions by themselves (not in a class) and call them in the methods of the player and dealer classes
+# Options for inheritance dillema: 
+# 1. Possibly take away game class and just have the methods in the player and dealer classes, would have to dupicate some methods in both classes
+# 2. Could just have the methods in the player class and then have the dealer class inherit from the player class, or vice versa 
+# 3. Could do a parent/child class or the other type of inheritance (starts with a c)
+# 4. Could take away the game class and just have the checking functions by themselves (not in a class) and call them in the methods of the player and dealer classes
 
 class Game:
     def __init__(self, player: Player, dealer: Dealer):
@@ -80,6 +84,8 @@ class Game:
 
     def check_for_loss(self):
         pass
+
+# Test rogue functions for checking functionality with inheritance below... will delete after testing
 
 # Make the deck_cards list a dictionary and a
 # Assign values to each card, or just have the Ace be a string and the rest numbers
