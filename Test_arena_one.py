@@ -253,3 +253,5 @@ if string_begin == 'This':
 #elif string_begin == ''
 #if statement same as above for the other card
 #if suit1 equals other suit, they win the side bet
+
+# Could also just make a list with the number and suit, and indexing would be easier^
