@@ -241,3 +241,15 @@ print(check_for_bust(player_1))
 
 # 1 and 2 would work most likely
 # Need to figuren out how to automatically call all the checking functions every time a turn is made (could make a function that calls all the checking functions and then call that function in every method that makes a turn)
+
+# How to get the index of a whole word in a string
+# Could use a for loop to check each index of the string and then return the index range of the word (after the space)
+# Could use if statements to check the first couple letters of the string (to see how long the string is until the suit), and then index to the range of the word if it matches (saved in a variable for each card)... then if that index range variables match, they win the side bet
+string = "This is a string" # String would be the card, then there would be another card
+string_begin = string[0:4]
+if string_begin == 'This':
+    suit1 = string[10:16]
+    print(suit1)
+#elif string_begin == ''
+#if statement same as above for the other card
+#if suit1 equals other suit, they win the side bet
