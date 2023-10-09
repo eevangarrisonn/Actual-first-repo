@@ -141,8 +141,18 @@ class People:
     # If supplement is (x), have x affect on x attribute
     # Depending on the persons current attributes, change the effects
   
+  # Need to test this still at bottom of file
   def level_up(self):
-    pass
+    if self.strength >= self.level * 1000:
+      self.level += 1
+      self.money += self.level * 20
+      # Make a max energy level and possibly make this function refill it to max when you level up
+      self.energy += 10
+      # Test out that the money format works with the above
+      return 'You have leveled up to level {level}! You have received {money} dollars, and 10 energy!'.format(level = self.level, money = self.level * 20)
+    else:
+      # Test out the strenght left format functionality
+      return 'You have to gain {strength_left} more strength to level up, keep lifting!'.format(strength_left = (self.level + 1) * 1000 - self.strength)
     # Player will level up every time he gains a certain amount of strength
     # Test stats with this function
     # After a certain amount of strength is gained the level up will happen
@@ -152,7 +162,7 @@ class People:
     # Player will lift weights at the gym, and gain strength
     # Deplete energy as they lift, add if statement about energy being at 0
     # When energy gets to zero, return a message about the run_out_of_energy method, or just include the method in this method
-    # Include the level up function in this
+    # Include the level up function in this so it checks everytime
 
   def lifting_partner(self, other_person):
     if abs(self.strength-other_person.strength) <= 500:
@@ -162,7 +172,7 @@ class People:
     else:
       return 'You and {other} are not close enough in strength to be lifting partners'.format(other = other_person)
     # Player will be able to see if another player is compatible as a lifting partner
-    # Figure out how to make it within a certaain ammount of strength 
+    # Figure out how to make it within a certaain amount of strength (is this done?)
     # Test this 
     # Add no duplicate functionality
     # Add friendly functionality, and authomatic calling of meet friends function
@@ -172,7 +182,7 @@ class People:
       self.refuel()
       return 'You have refueled, you may continue to workout!'
     #elif self.energy == 0 and len(self.preworkout_list) == 0:
-      #if self.money >= 20: (buy preworkout)
+      #if self.money >= 20: (buy preworkout) # <-- ask for input on buying pre workout
     else:
       return 'Game over, you have run out of energy, and have no abiltiy to refuel.'
     # Player will have to stop working out and have to refuel
@@ -207,3 +217,6 @@ test_person_scope.lifting_partner(test_person_two)
 test_person_two.lifting_partner(test_person_scope)
 print(test_person_scope)
 print(test_person_two)
+
+# Order of methods I need to work on: Take supplements, Refuel, Run out of energy, Lift weights
+# Things to possibly add: Sleeping for refuel, being able to buy food and eat to refuel, being able to buy a trainer to help you lift/gain strength faster, getting injured (and having injury preventative supps or training)

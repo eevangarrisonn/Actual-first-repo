@@ -76,12 +76,15 @@ class Dealer:
 # Figure out order of checking functions, which will connect to which, which will be called in which methods, and the end of the line (of checking functions) for every possible outcome, which checks need to go in which methods in both classes,  and how to get back to the beginning of the line (of checking functions) after every turn (call the deal function at end of line?)
 def check_for_blackjack():
     pass
-    # use if statement to check if the player/dealer statement (might need and or or)
+    # still need to figure out how to check for ace
+    # use if statement to check the player/dealer statement (might need and or or)
     # if it is true, return 'blackjack' and then call the check_for_win function
     # if it is false, pass (can you use pass statement in a function?)
 
 def check_for_bust():
     pass
+    # use if statement to check the player hand total, then use another if statement to check the dealer hand total
+    # return player/dealer bust depending on the if statement then trigger the deal or another checking method
     
 def check_for_win():
     pass
