@@ -137,9 +137,8 @@ class People:
     pass
     # Supplement gets taken by person, changes that persons stats
     # Could store in a dictionary, the keys would be the supplement name and the values would be a number (1, 2, or 3). Calling that value (number) is how the program will know what stats to change
-    # Add refuel function to this depending on energy and type of supplement taken
-    # If supplement is (x), have x affect on x attribute
-    # Depending on the persons current attributes, change the effects
+    # If supplement is (x), have x affect on x attribute... taking pre workout adds energy just like the refuel function, but you can call this one anytime, refuel is more of a forced function
+    # Depending on the persons current attributes, change the effects (have this be an if statment inside the if statement in the comment above)
   
   # Need to test this still at bottom of file
   def level_up(self):
@@ -161,7 +160,7 @@ class People:
     pass
     # Player will lift weights at the gym, and gain strength
     # Deplete energy as they lift, add if statement about energy being at 0
-    # When energy gets to zero, return a message about the run_out_of_energy method, or just include the method in this method
+    # Include the run out of energy function in this so it checks everytime
     # Include the level up function in this so it checks everytime
 
   def lifting_partner(self, other_person):
@@ -178,8 +177,9 @@ class People:
     # Add friendly functionality, and authomatic calling of meet friends function
 
   def run_out_of_energy(self):
+    # Add an elif/else statement for if they have energy, would just return 'You have energy, you may continue to workout!'
     if self.energy == 0 and len(self.preworkout_list) >= 1:
-      self.refuel()
+      self.refuel() # Ask for input here too?
       return 'You have refueled, you may continue to workout!'
     #elif self.energy == 0 and len(self.preworkout_list) == 0:
       #if self.money >= 20: (buy preworkout) # <-- ask for input on buying pre workout
@@ -193,7 +193,7 @@ class People:
 
   def refuel(self):
     pass
-    # Player will sleep/eat so they replenish their energy, and can workout again... energy can also be replenished by taking supplements
+    # Player will sleep/eat so they replenish their energy, and can workout again... energy can also be replenished by taking supplements (Only supps for now)
     # Possibly make it only supplements that can refuel, until I figure out how to use datetime to control the other functions
     # Add functionality to support the different supplement qualitys
     # Add take supplements functionality to this
@@ -220,3 +220,4 @@ print(test_person_two)
 
 # Order of methods I need to work on: Take supplements, Refuel, Run out of energy, Lift weights
 # Things to possibly add: Sleeping for refuel, being able to buy food and eat to refuel, being able to buy a trainer to help you lift/gain strength faster, getting injured (and having injury preventative supps or training)
+# Need to test the level up function
