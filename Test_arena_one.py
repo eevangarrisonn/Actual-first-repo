@@ -285,3 +285,6 @@ if string_begin == 'This':
 # if suit1 equals other suit, they win the side bet
 
 # Could also just make a list with the number and suit, and indexing would be easier^
+
+
+"""Testing push and pull"""
