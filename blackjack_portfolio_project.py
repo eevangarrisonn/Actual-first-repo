@@ -6,10 +6,9 @@
 # The player will have the follwing methods: bet, hit, stand, double down, split
 # The dealer will have the following methods: deal, hit
 
-# **NEEDED? May be able to include this in the methods of the player/dealer**
-# The game class will have the following attributes: deck, player, dealer
-#The game class will have the following methods: check for blackjack, check for bust,
-#check for win, check for push^
+# **NEEDED? May be able to include this in the methods of the player/dealer** 
+# The game will have the following attributes: deck, player, dealer
+# The game will have the following methods: check for blackjack, check for bust, check for win, check for push 
 
 import random
 
@@ -32,7 +31,7 @@ class Player:
 
     # What is the difference between __str__ and __repr__?
     def __repr__(self):
-        return f"{self.name} has {self.money} dollars worth of chips."
+        return f"{self.name} has {self.chips} chips"
 
     def bet(self, bet_amount):
         """Set the bet (expand later)"""
@@ -77,18 +76,14 @@ class Dealer:
     def shuffle(self):
         pass
 
-    # Checking functions here? Maybe create them and then call them each time in the methods above
-    # (if check(x) == True then (y))... create class with these functions that i can call above^
-
-# Options for inheritance dillema:
-# 1. Possibly take away game class and just have the methods in the player and dealer classes,
-# would have to dupicate some methods in both classes
-# 2. Could just have the methods in the player class and then have the dealer class inherit from
-# the player class, or vice versa
+    # Checking functions here? Maybe create them and then call them each time in the methods above (if check(x) == True then (y))... create class with these functions that i can call above
+    
+# Options for inheritance dillema: 
+# 1. Possibly take away game class and just have the methods in the player and dealer classes, would have to dupicate some methods in both classes
+# 2. Could just have the methods in the player class and then have the dealer class inherit from the player class, or vice versa 
 # 3. Could do a parent/child class or the other type of inheritance (starts with a c)
-# 4. Could take away the game class, just have the checking functions by themselves (not in a class)
-# and call them in the methods of the player and dealer classes
-
+# 4. Could take away the game class and just have the checking functions by themselves (not in a class) and call them in the methods of the player and dealer classes
+    
 # Applying number 4 below
 # Need seperate check for bust with dealer
 # Need seperate check for everything with dealer?

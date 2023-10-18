@@ -221,5 +221,3 @@ print(test_person_two)
 # Order of methods I need to work on: Take supplements, Refuel, Run out of energy, Lift weights
 # Things to possibly add: Sleeping for refuel, being able to buy food and eat to refuel, being able to buy a trainer to help you lift/gain strength faster, getting injured (and having injury preventative supps or training)
 # Need to test the level up function
-
-# testing auto save on ipad, need to test pull on ipad, and the export button on github codespaces
