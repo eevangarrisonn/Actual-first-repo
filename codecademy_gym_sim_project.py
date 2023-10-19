@@ -1,27 +1,46 @@
-# ROUGH IDEA OF WHAT I AM DOING IN COMMENTS BELOW
+"""This is a project for the CS path on Codecademy, it is a gym simulator."""
+# Research docstrings and how they work, especially __doc__
 
-# The program will be a gym simulator, where you can make friends, find a lifting partner, gain muscle/lose weight, and generally just lift... you can also level up your player, and take certain supplements to become stronger
+# The program will be a gym simulator, where you can make friends, find a lifting partner,
+# gain muscle/lose weight, and generally just lift... you can also level up your player,^
+# and take certain supplements to become stronger^
 
 # Supplement attributes: Ingredients, form, effect
 # Supplement methods: Get taken, get analyzed, show effects
 
-# Research how to order, how much that matters (classes and methods)... also research how to use classes within other classes... also reseaarch class attributes vs instance attributes
+# Research how to order, how much that matters (classes and methods)... also research how to use
+# classes within other classes... also reseaarch class attributes vs instance attributes^
+
 # Will figure out order of methods later, and their inputs
-# ****Will change out numbers to make more sense after logic is complete****
+
+# ****Will change out numbers to make more sense after logic is
+# complete****^
+
 # ***Figure out how to take in functions as input, and specify the directions in depth****
-# ***Create dictionarys for all information, change this in methods (can these be below the classes or do they have to be above)****
+
+# ***Create dictionarys for all information, change this in methods
+# (can these be below the classes or do they have to be above)****^
+
 # ***Read all comments and change****
 
 class Weights:
-    def __init__(self, type, weight):
-        self.type = type
+    """This class will be used to create weights, and will have a method to see how much strength 
+    you will gain from lifting them."""
+    def __init__(self, type_equipment, weight):
+        # Possibly chnage the .type to .type_equipment
+        self.type = type_equipment
         self.weight = weight
 
     def __repr__(self):
-        return 'This type of weight is a {type}, that weighs {weight}. You can see how much strength you will gain by calling the function below, with your character object as a parameter!'.format(type=self.type, weight=self.weight)
+        return f'''This type of weight is a {self.type}, that weighs {self.weight}. See how much
+        strength you will gain by calling the function below, with your character object as a 
+        parameter!'''
         # figure out how users can see all this information, and how to use inputs
 
+    # Make the person param a mandatory object type? (see blackjack project)
     def see_strength_gain(self, person):
+        """This is a method that will be used to see how much strength you will gain from lifting, 
+        a person object is used as a parameter"""
         # make dictionary for type of weights
         # possibly put in repitition functionality
         # how to avoid so many if/elif statements?
@@ -43,19 +62,24 @@ class Weights:
 
 
 class Supplements:
+    """This class will be used to create supplements, and will have methods to see the price, 
+    see the ingredients and see themselves."""
     # Create dictionary with supplement info (prices, types, effects, ingredients... maybe users can access it by typing in a variable (variable would be connected to list index accordingly)
-    def __init__(self, ingredients, type, price, effect):
+    def __init__(self, ingredients, type_supp, price, effect):
         self.ingredients = ingredients
         self.price = price
         self.effect = effect
-        self.type = type
+        # Possibly change the .type to .type_supp
+        self.type = type_supp
 
     def __repr__(self):
-        return 'This supplement is {type}, the ingredients are {ingredients}, and the price is {price}. The effect this will have on you is {effect}, how it changes your stats is dependent on your players attributes.'.format(type=self.type, ingredients=self.ingredients, price=self.price, effect=self.effect)
+        # Test below
+        return f'This supplement is {self.type}, the ingredients are {self.ingredients}, and the price is {self.price}. The effect this will have on you is {self.effect}, how it changes your stats is dependent on your players attributes.'
 
     def see_price(self, quantity):
         final_price = self.price * quantity
-        return 'The final price of this supplement order is {price}.'.format(price=final_price)
+        # Test below
+        return f'The final price of this supplement order is {final_price}.'
 
     def see_ingredients(self):
         if self.type == 'high quality creatine' and self.price > 20:
@@ -166,9 +190,10 @@ class People:
         if abs(self.strength-other_person.strength) <= 500:
             self.liftpartners.append(other_person)
             other_person.liftpartners.append(self)
-            return 'You and {new_lift_partner} are now lifting partners!'.format(new_lift_partner=other_person)
+            # Test below
+            return f'You and {other_person} are now lifting partners!'
         else:
-            return 'You and {other} are not close enough in strength to be lifting partners'.format(other=other_person)
+            return f'You and {other_person} are not close enough in strength to be lifting partners'
         # Player will be able to see if another player is compatible as a lifting partner
         # Figure out how to make it within a certaain amount of strength (is this done?)
         # Test this
@@ -221,3 +246,5 @@ print(test_person_two)
 # Order of methods I need to work on: Take supplements, Refuel, Run out of energy, Lift weights
 # Things to possibly add: Sleeping for refuel, being able to buy food and eat to refuel, being able to buy a trainer to help you lift/gain strength faster, getting injured (and having injury preventative supps or training)
 # Need to test the level up function
+
+# Figure out how to do final newline
