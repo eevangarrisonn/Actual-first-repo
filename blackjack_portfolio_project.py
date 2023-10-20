@@ -31,7 +31,7 @@ class Player:
 
     # What is the difference between __str__ and __repr__?
     def __repr__(self):
-        return f"{self.name} has {self.chips} chips"
+        return f"{self.name} has {self.money} dollars worth of chips."
 
     def bet(self, bet_amount):
         """Set the bet (expand later)"""
