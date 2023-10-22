@@ -29,7 +29,7 @@ class Enemy(pygame.sprite.Sprite):
         self.rect.y = random.randrange(-100, -40)
         self.speedy = random.randrange(1, 8)
 
-    def move(self):
+    #def move(self):
         
 
 # Why is the pygame.display.update() not in the for loop?
