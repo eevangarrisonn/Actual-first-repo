@@ -156,8 +156,12 @@ class People:
         # fixed the above, add if statements for different types of supplements and append to their own list
         # add high quality/low quality functionality since they will have different effects
 
-    def take_supplements(self, supplement):
-        pass
+    # testing out this functionality below, will probobaly create a dict for the different supplements and their effects as stated in the comments below this method
+    def take_supplements(self, supplement: Supplements):
+        if supplement.type == 'creatine':
+            self.strength += 100
+            self.energy += 5
+            return 'You have taken creatine, you have gained 100 strength, and 5 energy!'
         # Supplement gets taken by person, changes that persons stats
         # Could store in a dictionary, the keys would be the supplement name and the values would be a number (1, 2, or 3). Calling that value (number) is how the program will know what stats to change
         # If supplement is (x), have x affect on x attribute... taking pre workout adds energy just like the refuel function, but you can call this one anytime, refuel is more of a forced function
